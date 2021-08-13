@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+ 
+kind: Certificate
+metadata:
+  name: multik8smatsuya-pw-tls
+spec:
+  secretName: multik8smatsuya-pw
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: multik8smatsuya.pw
+  dnsNames:
+    - multik8smatsuya.pw
+    - www.multik8smatsuya.pw
